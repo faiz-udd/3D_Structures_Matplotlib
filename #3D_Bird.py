@@ -1,24 +1,35 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Define functions A, B, and C to generate coordinates for plotting
 def A(k):
-    return (3*k/20000) + np.sin((np.pi/2) * (k/10000)**7) * (np.cos(41*np.pi*k/10000))**6 + (1/4) * (np.cos(41*np.pi*k/10000))**16 * (np.cos(np.pi*k/20000))**12 * np.sin(6*np.pi*k/10000)
+    """
+    Function to calculate the X coordinate using parameter k.
+    """
+    return (3 * k / 20000) + np.sin((np.pi / 2) * (k / 10000)**7) * (np.cos(41 * np.pi * k / 10000))**6 + (1 / 4) * (np.cos(41 * np.pi * k / 10000))**16 * (np.cos(np.pi * k / 20000))**12 * np.sin(6 * np.pi * k / 10000)
 
 def B(k):
-    return -np.cos((np.pi/2) * (k/10000)**7) * (1 + (3/2) * (np.cos(np.pi*k/20000) * np.cos(3*np.pi*k/20000))**6) * (np.cos(41*np.pi*k/10000))**6 + (1/2) * (np.cos(3*np.pi*k/10000) * np.cos(9*np.pi*k/10000) * np.cos(18*np.pi*k/100000))**10
+    """
+    Function to calculate the Y coordinate using parameter k.
+    """
+    return -np.cos((np.pi / 2) * (k / 10000)**7) * (1 + (3 / 2) * (np.cos(np.pi * k / 20000) * np.cos(3 * np.pi * k / 20000))**6) * (np.cos(41 * np.pi * k / 10000))**6 + (1 / 2) * (np.cos(3 * np.pi * k / 10000) * np.cos(9 * np.pi * k / 10000) * np.cos(18 * np.pi * k / 100000))**10
 
 def C(k):
+    """
+    Function to calculate the Z coordinate using parameter k.
+    Modify this function as needed.
+    """
     return 0.1 * np.cos(k / 10000)  # Modify this function for Z coordinate
 
-# Define a range of k values for multiple circles
+# Define a range of k values for multiple points
 k_vals = np.linspace(-10000, 10000, 1000)  # Adjust resolution as needed
 
-# Calculate centers (A, B, C) for each point using the functions
+# Calculate X, Y, and Z coordinates for each point using the functions
 centers_x = A(k_vals)
 centers_y = B(k_vals)
-centers_z = C(k_vals)  # Calculate Z coordinate using the new function
+centers_z = C(k_vals)
 
-# Create the figure
+# Create the figure and 3D axis
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
