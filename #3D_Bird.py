@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 def A(k):
     return (3*k/20000) + np.sin((np.pi/2) * (k/10000)**7) * (np.cos(41*np.pi*k/10000))**6 + (1/4) * (np.cos(41*np.pi*k/10000))**16 * (np.cos(np.pi*k/20000))**12 * np.sin(6*np.pi*k/10000)
