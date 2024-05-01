@@ -1,4 +1,4 @@
-##Matplotlib Structures
+## Matplotlib Structures
 
 Welcome to the Matplotlib Structures repository! Here you'll find various data visualization structures implemented using Matplotlib library in Python.
 
