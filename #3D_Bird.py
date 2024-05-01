@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+#The Equation belongs to Hamid Naderi, an Iranian Mathematician
 # Define functions A, B, and C to generate coordinates for plotting
 def A(k):
     """
